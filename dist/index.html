@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="윤예진 프론트엔드 개발자 포트폴리오 — 개발 과정의 비효율을 개선하고 사용자 반응을 제품에 반영한 프로젝트를 소개합니다."
+    />
+    <meta name="theme-color" content="#2457ff" />
+    <title>윤예진 | Frontend Developer</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232457ff'/%3E%3Cpath d='M17 18h9l6 11 6-11h9L36 37v10h-8V37L17 18Z' fill='white'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="윤예진 포트폴리오 처음으로">
+        <span class="brand-mark">YYJ</span>
+        <span>Frontend Developer</span>
+      </a>
+      <nav aria-label="주요 메뉴">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a class="nav-download" href="./assets/yoon-yejin-portfolio.pdf" target="_blank" rel="noreferrer">PDF</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero section-shell" id="top">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Yoon Yejin · Portfolio</p>
+          <h1>빠르게 구현하고,<br /><span>실제 반응으로 개선합니다.</span></h1>
+          <p class="hero-description">
+            개발 과정의 비효율을 찾아 자동화하고, 표준화로 문제를 해결하며,
+            사용자 경험을 관찰해 서비스와 경험을 개선하는 프론트엔드 개발자 윤예진입니다.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">프로젝트 보기 <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="mailto:yyj11kr@naver.com">이메일 보내기 <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="윤예진 프로필">
+          <div class="portrait-frame">
+            <img src="./assets/profile.webp" alt="프론트엔드 개발자 윤예진 프로필 사진" />
+          </div>
+          <div class="hero-index" aria-hidden="true">
+            <span>03</span>
+            <p>selected<br />projects</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-intro section-shell" id="projects">
+        <div>
+          <p class="eyebrow">Selected work</p>
+          <h2>문제를 발견하고<br />구조로 해결한 경험</h2>
+        </div>
+        <p>
+          화면 구현에 머물지 않고 개발 경험, 데이터 흐름, 유지보수 구조까지 살펴
+          더 나은 제품을 만드는 과정을 담았습니다.
+        </p>
+      </section>
+
+      <article class="project project-blue" id="shadcn-dialog-snippet">
+        <div class="section-shell">
+          <header class="project-header reveal">
+            <div class="project-number">01</div>
+            <div class="project-heading">
+              <div class="project-meta">
+                <span>Open Source</span>
+                <span>2024.09 — 2025.03</span>
+              </div>
+              <h2>shadcn-dialog-snippet</h2>
+              <p>
+                shadcn/ui의 Dialog 컴포넌트를 다양한 사례와 함께 제공하는 오픈소스 프로젝트입니다.
+                반복되는 코드 변환을 자동화하고, 사용자 행동 데이터를 수집할 수 있는 기반을 만들었습니다.
+              </p>
+              <div class="project-links">
+                <a href="https://shadcn-dialog-snippet.vercel.app" target="_blank" rel="noreferrer">서비스 보기 ↗</a>
+                <a href="https://github.com/Yejin0O0/shadcn-dialog-snippet" target="_blank" rel="noreferrer">GitHub ↗</a>
+              </div>
+            </div>
+          </header>
+
+          <div class="tech-list" aria-label="사용 기술">
+            <span>React</span><span>TypeScript</span><span>Vite</span><span>Tailwind CSS</span><span>Mixpanel</span><span>shadcn/ui</span><span>Biome</span>
+          </div>
+
+          <div class="project-body">
+            <div class="project-story reveal">
+              <p class="story-label">Developer Experience</p>
+              <h3>수동 스크립트를 Vite 플러그인으로</h3>
+              <p>
+                컴포넌트 코드를 문자열로 변환하는 과정에서 변환 누락과 반복 작업이 발생했습니다.
+                Vite 플러그인을 구현해 개발 서버 실행 시 전체 파일을 변환하고, 수정된 파일만 다시 처리하도록 구성했습니다.
+              </p>
+              <ul>
+                <li><strong>buildStart</strong>에서 전체 파일을 변환해 초기 상태를 일치시켰습니다.</li>
+                <li><strong>handleHotUpdate</strong>에서 변경 파일만 반영해 HMR을 지원했습니다.</li>
+                <li>기존 변환 결과를 캐시하고 출력 파일은 <strong>Biome</strong>으로 자동 포맷했습니다.</li>
+              </ul>
+            </div>
+            <aside class="project-note reveal">
+              <p class="story-label">Product Data</p>
+              <h3>클릭 데이터를 다음 개선의 근거로</h3>
+              <p>
+                카테고리 바로가기 버튼에 Mixpanel 이벤트를 적용해 어떤 Dialog 유형이 많이 탐색되는지 확인할 수 있는 환경을 구축했습니다.
+              </p>
+            </aside>
+          </div>
+
+          <div class="media-grid media-grid-three reveal">
+            <figure><img src="./assets/shadcn-overview.webp" alt="shadcn-dialog-snippet의 Dialog 사례 목록 화면" loading="lazy" /></figure>
+            <figure><img src="./assets/shadcn-code.webp" alt="Dialog 예시와 코드 확인 화면" loading="lazy" /></figure>
+            <figure><img src="./assets/shadcn-form.webp" alt="폼 Dialog 예시 화면" loading="lazy" /></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-dark" id="kokkok">
+        <div class="section-shell">
+          <header class="project-header reveal">
+            <div class="project-number">02</div>
+            <div class="project-heading">
+              <div class="project-meta">
+                <span>Team Project</span>
+                <span>2024.09 — 2024.12</span>
+              </div>
+              <h2>콕콕</h2>
+              <p>
+                배드민턴 동호회 운영에 필요한 클럽, 리그, 토너먼트와 점수판 기능을 제공하는 플랫폼입니다.
+                사용자 불편을 줄이면서도 팀이 일관된 방식으로 확장할 수 있는 구조를 설계했습니다.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/Kernel360/F2_PLAY_BADMINTON_FE" target="_blank" rel="noreferrer">GitHub ↗</a>
+              </div>
+            </div>
+          </header>
+
+          <div class="tech-list" aria-label="사용 기술">
+            <span>Next.js</span><span>TypeScript</span><span>TanStack Query</span><span>Tailwind CSS</span><span>shadcn/ui</span><span>Storybook</span><span>Biome</span>
+          </div>
+
+          <div class="feature-grid reveal">
+            <section>
+              <span>01</span>
+              <h3>낙관적 업데이트</h3>
+              <p>debounce로 불필요한 통신을 줄이고, 서버 응답 전 점수 변경을 UI에 반영했습니다.</p>
+            </section>
+            <section>
+              <span>02</span>
+              <h3>SEO 강화</h3>
+              <p>서버 컴포넌트, prefetch, dehydrate, SSR과 동적 사이트맵을 적용했습니다.</p>
+            </section>
+            <section>
+              <span>03</span>
+              <h3>공용 에러 처리</h3>
+              <p>데이터 요청과 전송 과정의 에러 로직을 공용 Hook으로 통합했습니다.</p>
+            </section>
+            <section>
+              <span>04</span>
+              <h3>토너먼트 설계</h3>
+              <p>react-flow로 경기 연결 관계와 실시간 진행 상황을 시각화했습니다.</p>
+            </section>
+          </div>
+
+          <div class="media-grid media-grid-feature reveal">
+            <figure class="media-feature"><img src="./assets/kokkok-club.webp" alt="콕콕의 배드민턴 동호회 탐색 화면" loading="lazy" /></figure>
+            <figure><img src="./assets/kokkok-calendar.webp" alt="콕콕의 경기 일정 달력 화면" loading="lazy" /></figure>
+            <figure><img src="./assets/kokkok-bracket.webp" alt="콕콕의 토너먼트 대진표 화면" loading="lazy" /></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-light" id="ibas">
+        <div class="section-shell">
+          <header class="project-header reveal">
+            <div class="project-number">03</div>
+            <div class="project-heading">
+              <div class="project-meta">
+                <span>Club Service</span>
+                <span>2021.02 — 2024.07</span>
+              </div>
+              <h2>IBAS</h2>
+              <p>
+                100명 규모 동아리의 회원 관리와 활동 조율을 지원하는 LMS입니다.
+                Django 템플릿 기반 구조를 React로 전환해 유지보수성과 재사용성을 개선했습니다.
+              </p>
+              <div class="project-links">
+                <a href="https://www.inhabas.com/" target="_blank" rel="noreferrer">서비스 보기 ↗</a>
+                <a href="https://github.com/InhaBas/inhabas.com-front" target="_blank" rel="noreferrer">GitHub ↗</a>
+              </div>
+            </div>
+          </header>
+
+          <div class="tech-list" aria-label="사용 기술">
+            <span>React</span><span>TypeScript</span><span>Vite</span><span>Styled Components</span><span>Recoil</span>
+          </div>
+
+          <div class="project-body">
+            <div class="project-story reveal">
+              <p class="story-label">Architecture</p>
+              <h3>Django에서 React로 마이그레이션</h3>
+              <p>
+                서버와 클라이언트 로직이 결합된 구조를 분리하고, 공통 UI 요소를 React 컴포넌트로 전환했습니다.
+                기능별 로직을 독립적으로 관리해 최소한의 수정으로 유지보수할 수 있는 구조를 만들었습니다.
+              </p>
+            </div>
+            <aside class="project-note reveal">
+              <p class="story-label">Permission System</p>
+              <h3>18개 권한을 9개로 단순화</h3>
+              <p>
+                관리 복잡성을 낮추기 위해 권한 체계를 축소하고, 권한별 UI와 접근 로직을 다시 설계했습니다.
+              </p>
+            </aside>
+          </div>
+
+          <div class="media-grid media-grid-three reveal">
+            <figure><img src="./assets/ibas-home.webp" alt="IBAS 동아리 LMS 홈 화면" loading="lazy" /></figure>
+            <figure><img src="./assets/ibas-post.webp" alt="IBAS 자유게시판 게시글 화면" loading="lazy" /></figure>
+            <figure><img src="./assets/ibas-account.webp" alt="IBAS 회원 관리 상세 화면" loading="lazy" /></figure>
+          </div>
+        </div>
+      </article>
+
+      <section class="about section-shell" id="about">
+        <div class="about-title reveal">
+          <p class="eyebrow">About</p>
+          <h2>기본기를 바탕으로<br />팀에 더 큰 가치를</h2>
+        </div>
+        <div class="about-copy reveal">
+          <p>
+            주도적으로 목표를 재정의하고 빠르게 학습해 적용합니다. 기능을 만드는 것에서 끝내지 않고,
+            팀의 개발 흐름과 사용자가 체감하는 경험까지 함께 개선하는 개발자로 성장하고 있습니다.
+          </p>
+          <div class="contact-list">
+            <a href="mailto:yyj11kr@naver.com"><span>Email</span> yyj11kr@naver.com <b aria-hidden="true">↗</b></a>
+            <a href="https://github.com/Yejin0O0" target="_blank" rel="noreferrer"><span>GitHub</span> github.com/Yejin0O0 <b aria-hidden="true">↗</b></a>
+            <a href="./assets/yoon-yejin-portfolio.pdf" target="_blank" rel="noreferrer"><span>PDF</span> 원본 포트폴리오 보기 <b aria-hidden="true">↗</b></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="section-shell footer-inner">
+        <p>© <span id="year">2026</span> Yoon Yejin</p>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+  </body>
+</html>
